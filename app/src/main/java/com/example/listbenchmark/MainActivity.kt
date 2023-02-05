@@ -37,7 +37,20 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun onClick(item: HomeListItem) {
-        Log.d(TAG, "onClick: ${item.title}")
+        when (item) {
+            HomeListItem.ComposeLazyColumn -> {
+
+            }
+            HomeListItem.ComposeViewInRecyclerView -> {
+
+            }
+            HomeListItem.NativeRecyclerView -> {
+
+            }
+            HomeListItem.XmlViewComposeViewInRecyclerView -> {
+
+            }
+        }
     }
 
     companion object {
