@@ -10,6 +10,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.listbenchmark.ui.ComposeActivity
 import com.example.listbenchmark.ui.RecyclerViewActivity
+import com.example.listbenchmark.ui.RecyclerViewActivity.Companion.LIST_TYPE
+import com.example.listbenchmark.ui.RecyclerViewActivity.Companion.LIST_TYPE_COMPOSE
+import com.example.listbenchmark.ui.RecyclerViewActivity.Companion.LIST_TYPE_VIEW_PLUS_COMPOSE
+import com.example.listbenchmark.ui.RecyclerViewActivity.Companion.LIST_TYPE_VIEW
 import com.example.listbenchmark.ui.theme.ListBenchmarkTheme
 
 class MainActivity : ComponentActivity() {
@@ -37,12 +41,24 @@ class MainActivity : ComponentActivity() {
     private fun onClick(item: HomeListItem) {
         val intent = when (item) {
             HomeListItem.ComposeLazyColumn -> Intent(this, ComposeActivity::class.java)
-            HomeListItem.ComposeViewInRecyclerView -> null
-            HomeListItem.NativeRecyclerView -> Intent(this, RecyclerViewActivity::class.java)
-            HomeListItem.XmlViewComposeViewInRecyclerView -> null
+            HomeListItem.ComposeViewInRecyclerView -> {
+                Intent(this, RecyclerViewActivity::class.java).apply {
+                    putExtra(LIST_TYPE, LIST_TYPE_COMPOSE)
+                }
+            }
+            HomeListItem.NativeRecyclerView -> {
+                Intent(this, RecyclerViewActivity::class.java).apply {
+                    putExtra(LIST_TYPE, LIST_TYPE_VIEW)
+                }
+            }
+            HomeListItem.XmlViewComposeViewInRecyclerView -> {
+                Intent(this, RecyclerViewActivity::class.java).apply {
+                    putExtra(LIST_TYPE, LIST_TYPE_VIEW_PLUS_COMPOSE)
+                }
+            }
         }
 
-        intent?.let { startActivity(it) }
+        startActivity(intent)
     }
 
     companion object {
