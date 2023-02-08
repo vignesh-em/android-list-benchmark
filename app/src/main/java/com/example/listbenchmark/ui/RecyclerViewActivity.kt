@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import com.example.listbenchmark.databinding.ActivityRecyclerViewBinding
 import com.example.listbenchmark.fakedata.fakeData
-import com.example.listbenchmark.ui.compose.ComposeListAdapter
 
 class RecyclerViewActivity : ComponentActivity() {
 
@@ -19,13 +18,15 @@ class RecyclerViewActivity : ComponentActivity() {
     }
 
     private fun setupList() {
-        val adapter = when (intent.getStringExtra(LIST_TYPE)) {
-            LIST_TYPE_COMPOSE -> ComposeListAdapter()
-            else -> ComposeListAdapter()
+        PlantListAdapter(getAdapterType(intent.getStringExtra(LIST_TYPE))).run {
+            binding.recyclerView.adapter = this
+            submitList(fakeData)
         }
-        binding.recyclerView.adapter = adapter
+    }
 
-        adapter.submitList(fakeData)
+    private fun getAdapterType(listType: String?) = when (listType) {
+        LIST_TYPE_VIEW -> AdapterType.View
+        else -> AdapterType.Compose
     }
 
     companion object {
