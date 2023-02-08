@@ -1,9 +1,10 @@
 package com.example.listbenchmark.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import com.example.listbenchmark.databinding.ActivityRecyclerViewBinding
+import com.example.listbenchmark.fakedata.fakeData
+import com.example.listbenchmark.ui.compose.ComposeListAdapter
 
 class RecyclerViewActivity : ComponentActivity() {
 
@@ -18,10 +19,13 @@ class RecyclerViewActivity : ComponentActivity() {
     }
 
     private fun setupList() {
-        Log.d(TAG, "setupList: ${intent.getStringExtra(LIST_TYPE)}")
-        binding.recyclerView.adapter = when (intent.getStringExtra(LIST_TYPE)) {
-            else -> null
+        val adapter = when (intent.getStringExtra(LIST_TYPE)) {
+            LIST_TYPE_COMPOSE -> ComposeListAdapter()
+            else -> ComposeListAdapter()
         }
+        binding.recyclerView.adapter = adapter
+
+        adapter.submitList(fakeData)
     }
 
     companion object {
