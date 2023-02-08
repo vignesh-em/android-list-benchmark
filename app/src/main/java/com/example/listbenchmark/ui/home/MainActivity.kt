@@ -1,5 +1,6 @@
 package com.example.listbenchmark.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -7,6 +8,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import com.example.listbenchmark.ui.ComposeActivity
+import com.example.listbenchmark.ui.RecyclerViewActivity
 import com.example.listbenchmark.ui.theme.ListBenchmarkTheme
 
 class MainActivity : ComponentActivity() {
@@ -33,9 +36,9 @@ class MainActivity : ComponentActivity() {
 
     private fun onClick(item: HomeListItem) {
         val intent = when (item) {
-            HomeListItem.ComposeLazyColumn -> null
+            HomeListItem.ComposeLazyColumn -> Intent(this, ComposeActivity::class.java)
             HomeListItem.ComposeViewInRecyclerView -> null
-            HomeListItem.NativeRecyclerView -> null
+            HomeListItem.NativeRecyclerView -> Intent(this, RecyclerViewActivity::class.java)
             HomeListItem.XmlViewComposeViewInRecyclerView -> null
         }
 

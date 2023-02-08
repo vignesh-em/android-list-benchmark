@@ -7,6 +7,10 @@ android {
     namespace 'com.example.listbenchmark'
     compileSdk 33
 
+    buildFeatures {
+        viewBinding true
+    }
+
     defaultConfig {
         applicationId "com.example.listbenchmark"
         minSdk 21
@@ -55,6 +59,9 @@ dependencies {
     implementation "androidx.compose.ui:ui:$composeVersion"
     implementation "androidx.compose.ui:ui-tooling-preview:$composeVersion"
     implementation "androidx.compose.material3:material3:$composeMaterial3Version"
+    implementation "androidx.recyclerview:recyclerview:$recyclerViewVersion"
+    implementation "com.github.bumptech.glide:compose:$glideComposeVersion"
+    implementation "com.google.android.material:material:$material3Version"
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$extJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCore"
