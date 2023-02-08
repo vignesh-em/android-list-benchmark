@@ -2,6 +2,7 @@ package com.example.listbenchmark.ui.home
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
@@ -16,7 +17,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun HomeScreen(homeList: List<HomeListItem>, onClick: (HomeListItem) -> Unit) {
-    LazyColumn {
+    LazyColumn(modifier = Modifier.fillMaxSize()) {
         items(homeList) {
             HomeListItem(it, onClick)
             Divider()

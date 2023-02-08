@@ -1,17 +1,12 @@
-package com.example.listbenchmark
+package com.example.listbenchmark.ui.home
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
-import com.example.listbenchmark.ui.home.HomeListItem
-import com.example.listbenchmark.ui.home.HomeScreen
 import com.example.listbenchmark.ui.theme.ListBenchmarkTheme
 
 class MainActivity : ComponentActivity() {
@@ -37,20 +32,14 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun onClick(item: HomeListItem) {
-        when (item) {
-            HomeListItem.ComposeLazyColumn -> {
-
-            }
-            HomeListItem.ComposeViewInRecyclerView -> {
-
-            }
-            HomeListItem.NativeRecyclerView -> {
-
-            }
-            HomeListItem.XmlViewComposeViewInRecyclerView -> {
-
-            }
+        val intent = when (item) {
+            HomeListItem.ComposeLazyColumn -> null
+            HomeListItem.ComposeViewInRecyclerView -> null
+            HomeListItem.NativeRecyclerView -> null
+            HomeListItem.XmlViewComposeViewInRecyclerView -> null
         }
+
+        intent?.let { startActivity(it) }
     }
 
     companion object {
