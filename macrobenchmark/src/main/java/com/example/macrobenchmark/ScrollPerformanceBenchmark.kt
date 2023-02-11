@@ -5,6 +5,8 @@ import androidx.benchmark.macro.StartupMode
 import androidx.benchmark.macro.junit4.MacrobenchmarkRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.uiautomator.By
+import androidx.test.uiautomator.UiScrollable
+import androidx.test.uiautomator.UiSelector
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -65,12 +67,6 @@ class ScrollPerformanceBenchmark {
             device.findObject(By.text(title)).click()
         }
     ) {
-        with(device) {
-            val startX = (displayWidth * 0.5).toInt()
-            val startY = (displayHeight * 0.75).toInt()
-            val endY = (displayHeight * 0.25).toInt()
-            drag(startX, startY, startX, endY, 10)
-            waitForIdle()
-        }
+        UiScrollable(UiSelector().scrollable(true)).flingForward()
     }
 }
