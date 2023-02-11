@@ -14,8 +14,8 @@ import com.example.listbenchmark.ui.fakedata.fakeData
 import com.example.listbenchmark.ui.getGridSpanCount
 import com.example.listbenchmark.ui.getListType
 import com.example.listbenchmark.ui.list.viewholder.PlantViewHolderFactory
+import com.example.listbenchmark.ui.list.viewtypeproviders.AlternatingViewPlusComposeViewTypeProvider
 import com.example.listbenchmark.ui.list.viewtypeproviders.ComposeViewTypeProvider
-import com.example.listbenchmark.ui.list.viewtypeproviders.RandomViewTypeProvider
 import com.example.listbenchmark.ui.list.viewtypeproviders.ViewViewTypeProvider
 
 class RecyclerViewActivity : ComponentActivity() {
@@ -33,7 +33,7 @@ class RecyclerViewActivity : ComponentActivity() {
     private fun setupList() {
         BenchmarkListAdapter(
             PlantViewHolderFactory,
-            getAdapterType(intent.getListType()),
+            getViewTypeProvider(intent.getListType()),
             PlantDiffUtilCallback
         ).run {
             binding.recyclerView.layoutManager = getLayoutManager(intent.getGridSpanCount())
@@ -47,9 +47,9 @@ class RecyclerViewActivity : ComponentActivity() {
         else GridLayoutManager(baseContext, gridSpanCount)
     }
 
-    private fun getAdapterType(listType: String?): ItemViewTypeProvider = when (listType) {
+    private fun getViewTypeProvider(listType: String?): ItemViewTypeProvider = when (listType) {
         LIST_TYPE_VIEW -> ViewViewTypeProvider()
         LIST_TYPE_COMPOSE -> ComposeViewTypeProvider()
-        else -> RandomViewTypeProvider()
+        else -> AlternatingViewPlusComposeViewTypeProvider()
     }
 }
