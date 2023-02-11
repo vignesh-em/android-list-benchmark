@@ -1,4 +1,4 @@
-package com.example.listbenchmark.fakedata
+package com.example.listbenchmark.ui.fakedata
 
 import androidx.annotation.DrawableRes
 import com.example.listbenchmark.R

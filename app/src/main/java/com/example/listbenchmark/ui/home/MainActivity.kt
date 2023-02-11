@@ -8,12 +8,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.example.listbenchmark.ui.ComposeActivity
-import com.example.listbenchmark.ui.RecyclerViewActivity
-import com.example.listbenchmark.ui.RecyclerViewActivity.Companion.LIST_TYPE
-import com.example.listbenchmark.ui.RecyclerViewActivity.Companion.LIST_TYPE_COMPOSE
-import com.example.listbenchmark.ui.RecyclerViewActivity.Companion.LIST_TYPE_VIEW_PLUS_COMPOSE
-import com.example.listbenchmark.ui.RecyclerViewActivity.Companion.LIST_TYPE_VIEW
+import com.example.listbenchmark.ui.list.ComposeActivity
+import com.example.listbenchmark.ui.list.RecyclerViewActivity
+import com.example.listbenchmark.ui.list.RecyclerViewActivity.Companion.LIST_TYPE
+import com.example.listbenchmark.ui.list.RecyclerViewActivity.Companion.LIST_TYPE_COMPOSE
+import com.example.listbenchmark.ui.list.RecyclerViewActivity.Companion.LIST_TYPE_VIEW_PLUS_COMPOSE
+import com.example.listbenchmark.ui.list.RecyclerViewActivity.Companion.LIST_TYPE_VIEW
 import com.example.listbenchmark.ui.theme.ListBenchmarkTheme
 
 class MainActivity : ComponentActivity() {

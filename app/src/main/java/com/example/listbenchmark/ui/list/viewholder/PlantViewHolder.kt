@@ -1,8 +1,9 @@
-package com.example.listbenchmark.ui
+package com.example.listbenchmark.ui.list.viewholder
 
 import com.bumptech.glide.Glide
 import com.example.listbenchmark.databinding.ItemPlantBinding
-import com.example.listbenchmark.fakedata.Plant
+import com.example.listbenchmark.ui.fakedata.Plant
+import com.example.listbenchmark.adapter.BaseViewHolder
 
 class PlantViewHolder(private val binding: ItemPlantBinding) : BaseViewHolder<Plant>(binding.root) {
     override fun bind(model: Plant) {

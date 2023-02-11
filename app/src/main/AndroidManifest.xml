@@ -13,12 +13,12 @@
         android:theme="@style/Theme.ListBenchmark"
         tools:targetApi="31">
         <activity
-            android:name=".ui.RecyclerViewActivity"
+            android:name=".ui.list.RecyclerViewActivity"
             android:exported="false"
             android:theme="@style/Theme.ListBenchmark" />
 
         <activity
-            android:name=".ui.ComposeActivity"
+            android:name=".ui.list.ComposeActivity"
             android:exported="false"
             android:theme="@style/Theme.ListBenchmark" />
 
