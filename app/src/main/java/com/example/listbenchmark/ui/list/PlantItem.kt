@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -25,7 +26,7 @@ import com.example.listbenchmark.ui.fakedata.Plant
 fun PlantItem(plant: Plant) {
     Box(
         modifier = Modifier
-            .padding(8.dp)
+            .padding(dimensionResource(id = R.dimen.box_padding))
             .wrapContentHeight()
             .fillMaxWidth()
     ) {
@@ -36,14 +37,14 @@ fun PlantItem(plant: Plant) {
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun PlantCard(name: String, imageId: Int) {
-    Card(elevation = CardDefaults.cardElevation(2.dp)) {
+    Card(elevation = CardDefaults.cardElevation(dimensionResource(id = R.dimen.plant_card_elevation))) {
         Column {
             GlideImage(
                 model = imageId,
                 contentDescription = name,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .height(95.dp)
+                    .height(dimensionResource(id = R.dimen.plant_image_height))
                     .fillMaxWidth()
             )
             Text(
@@ -52,7 +53,7 @@ fun PlantCard(name: String, imageId: Int) {
                 maxLines = 1,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 16.dp)
+                    .padding(vertical = dimensionResource(id = R.dimen.plant_name_text_vertical_padding))
                     .align(Alignment.CenterHorizontally)
             )
         }

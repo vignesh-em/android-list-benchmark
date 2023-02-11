@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="box_padding">8dp</dimen>
+    <dimen name="plant_image_height">95dp</dimen>
+    <dimen name="plant_card_elevation">2dp</dimen>
+    <dimen name="plant_name_text_vertical_padding">16dp</dimen>
+</resources>
