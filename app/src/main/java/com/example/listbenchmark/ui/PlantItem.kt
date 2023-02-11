@@ -54,7 +54,7 @@ fun PlantCard(name: String, imageId: Int) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(vertical = 16.dp)
-                    .wrapContentWidth(Alignment.CenterHorizontally)
+                    .align(Alignment.CenterHorizontally)
             )
         }
     }
@@ -63,5 +63,5 @@ fun PlantCard(name: String, imageId: Int) {
 @Preview
 @Composable
 fun PlantItemPreview() {
-    PlantItem(Plant("Aquilegia Coerulea", R.drawable.aquilegia_coerulea))
+    PlantItem(Plant("Rocky Mountain Columbine", R.drawable.aquilegia_coerulea))
 }
