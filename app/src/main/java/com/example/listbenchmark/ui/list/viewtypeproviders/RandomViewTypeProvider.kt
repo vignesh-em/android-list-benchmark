@@ -1,7 +1,7 @@
 package com.example.listbenchmark.ui.list.viewtypeproviders
 
-import com.example.listbenchmark.adapter.BenchmarkViewType
-import com.example.listbenchmark.adapter.ItemViewTypeProvider
+import com.example.benchmarkutils.adapter.BenchmarkViewType
+import com.example.benchmarkutils.adapter.ItemViewTypeProvider
 
 class RandomViewTypeProvider : ItemViewTypeProvider() {
 

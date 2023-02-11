@@ -1,4 +1,4 @@
-package com.example.listbenchmark.adapter
+package com.example.benchmarkutils.adapter
 
 import android.view.ViewGroup
 

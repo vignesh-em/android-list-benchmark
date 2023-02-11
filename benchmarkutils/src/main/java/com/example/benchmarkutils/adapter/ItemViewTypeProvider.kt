@@ -1,4 +1,4 @@
-package com.example.listbenchmark.adapter
+package com.example.benchmarkutils.adapter
 
 abstract class ItemViewTypeProvider {
 

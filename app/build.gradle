@@ -51,7 +51,7 @@ android {
 }
 
 dependencies {
-
+    implementation project(":benchmarkutils")
     implementation "androidx.core:core-ktx:$kotlinCoreKtxVersion"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleRuntimeKtxVersion"
     implementation "androidx.activity:activity-compose:$activityComposeVersion"

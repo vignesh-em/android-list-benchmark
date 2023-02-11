@@ -5,8 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.listbenchmark.adapter.BenchmarkListAdapter
-import com.example.listbenchmark.adapter.ItemViewTypeProvider
+import com.example.benchmarkutils.adapter.BenchmarkListAdapter
+import com.example.benchmarkutils.adapter.ItemViewTypeProvider
 import com.example.listbenchmark.databinding.ActivityRecyclerViewBinding
 import com.example.listbenchmark.ui.LIST_TYPE_COMPOSE
 import com.example.listbenchmark.ui.LIST_TYPE_VIEW

@@ -1,4 +1,4 @@
-package com.example.listbenchmark.lazycolumn
+package com.example.benchmarkutils.lazycolumn
 
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
