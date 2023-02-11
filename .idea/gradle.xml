@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/benchmarkutils" />
+            <option value="$PROJECT_DIR$/macrobenchmark" />
           </set>
         </option>
       </GradleProjectSettings>
