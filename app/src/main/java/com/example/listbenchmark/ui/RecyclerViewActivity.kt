@@ -26,7 +26,8 @@ class RecyclerViewActivity : ComponentActivity() {
 
     private fun getAdapterType(listType: String?) = when (listType) {
         LIST_TYPE_VIEW -> AdapterType.View
-        else -> AdapterType.Compose
+        LIST_TYPE_COMPOSE -> AdapterType.Compose
+        else -> AdapterType.ViewPlusCompose
     }
 
     companion object {
