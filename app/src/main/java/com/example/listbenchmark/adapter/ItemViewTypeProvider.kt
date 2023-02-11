@@ -1,5 +1,8 @@
 package com.example.listbenchmark.adapter
 
-fun interface ItemViewTypeProvider {
-    fun getItemViewType(position: Int): Int
+abstract class ItemViewTypeProvider {
+
+    internal fun getItemViewType(position: Int) = getViewType(position).type
+
+    abstract fun getViewType(position: Int): BenchmarkViewType
 }

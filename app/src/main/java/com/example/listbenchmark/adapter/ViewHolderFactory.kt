@@ -2,6 +2,10 @@ package com.example.listbenchmark.adapter
 
 import android.view.ViewGroup
 
-interface ViewHolderFactory<T> {
-    fun createViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<T>
+abstract class ViewHolderFactory<T> {
+    internal fun createViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<T> {
+        return createViewHolder(parent, BenchmarkViewType.values()[viewType])
+    }
+
+    abstract fun createViewHolder(parent: ViewGroup, viewType: BenchmarkViewType): BaseViewHolder<T>
 }
