@@ -8,7 +8,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.listbenchmark.ui.fakedata.fakeData
-import com.example.listbenchmark.ui.lazycolumn.ComposeLazyColumnScreen
 import com.example.listbenchmark.ui.theme.ListBenchmarkTheme
 
 class ComposeActivity : ComponentActivity() {
@@ -20,7 +19,7 @@ class ComposeActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    ComposeLazyColumnScreen(list = fakeData)
+                    PlantListScreen(list = fakeData)
                 }
             }
         }
